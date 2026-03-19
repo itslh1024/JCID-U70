@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JCID U70 Gen2 Android NAND Programmer — UFS/eMMC/ISP</title>
+<meta name="description" content="JCID U70 Gen2 — the fastest Android NAND programmer. 99% UFS/eMMC coverage. UFS 4.1 ready. 250MB/s read, 350MB/s write. USB 3.0 single cable.">
+<meta property="og:type" content="product">
+<meta property="og:title" content="JCID U70 Gen2 — The Fastest Android NAND Programmer">
+<meta property="og:description" content="250MB/s read · 350MB/s write · 99% UFS/eMMC coverage · UFS 4.1 ready.">
+<meta property="og:image" content="https://itslh1024.github.io/jcid-u70/og-image.png">
+<meta property="og:url" content="https://itslh1024.github.io/jcid-u70/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://itslh1024.github.io/jcid-u70/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"JCID U70 Gen2","brand":{"@type":"Brand","name":"JCID"},"description":"Professional Android NAND programmer supporting UFS 4.1, eMMC 5.1 and ISP.","offers":{"@type":"Offer","priceCurrency":"USD","availability":"https://schema.org/InStock"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1a9fd4; --blue2:#0d7ab0; --blue3:#29bde8; --blue4:#e3f5fd;
+  --blue-bg:#0a2a4a; --blue-bg2:#0d3d6e;
+  --green:#4ecb71; --green2:#2ea84f; --green3:#1a7a3a;
+  --white:#fff; --off:#f0f8fd; --dark:#0a1628; --text:#1c3040; --muted:#5a7a9a;
+  --border:#c8e8f5; --shadow:0 4px 24px rgba(10,42,74,.10); --shadow2:0 8px 40px rgba(10,42,74,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Barlow',sans-serif;background:var(--off);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);box-shadow:0 1px 20px rgba(10,42,74,.07)}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;color:var(--blue);letter-spacing:.5px}
+.nav-logo span{color:var(--muted);font-weight:400;font-size:12px;margin-left:4px}
+.nav-chip{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--blue);background:var(--blue4);border:1px solid rgba(26,159,212,.3);padding:3px 10px;border-radius:4px;text-transform:uppercase}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}.nav-links a:hover{color:var(--blue)}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.5px;color:#fff;background:var(--blue);padding:8px 20px;border-radius:6px;text-decoration:none;transition:all .2s}.nav-cta:hover{background:var(--blue2);transform:translateY(-1px)}
+/* ─── HERO ─── */
+#hero{min-height:100vh;padding:80px 20px 60px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue-bg) 0%,var(--blue-bg2) 55%,#0a3520 100%);text-align:center}
+#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 110%,rgba(78,203,113,.15) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% -10%,rgba(26,159,212,.15) 0%,transparent 60%)}
+#hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-badge{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;background:rgba(78,203,113,.15);border:1px solid rgba(78,203,113,.4);color:var(--green);padding:6px 18px;border-radius:100px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;animation:fadeUp .6s ease both}
+.hero-badge::before{content:'●';font-size:8px;animation:pulse 1.4s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+h1.hero-title{position:relative;z-index:1;font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.6rem,7vw,4.8rem);font-weight:900;line-height:1.02;letter-spacing:-.5px;color:#fff;margin-bottom:8px;animation:fadeUp .6s .1s ease both}
+h1.hero-title span{color:var(--green)}
+.hero-sub{position:relative;z-index:1;font-size:clamp(1rem,2.5vw,1.2rem);color:rgba(255,255,255,.7);font-weight:500;margin-bottom:6px;animation:fadeUp .6s .2s ease both}
+.hero-chip{position:relative;z-index:1;display:inline-block;background:rgba(26,159,212,.2);border:1px solid rgba(26,159,212,.5);color:var(--blue3);padding:4px 16px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:1px;margin-bottom:36px;animation:fadeUp .6s .25s ease both}
+.hero-img-wrap{position:relative;max-width:440px;margin:0 auto 36px;animation:fadeUp .7s .3s ease both}
+.hero-img-wrap img{width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 2px rgba(78,203,113,.3);transition:transform .4s ease}
+.hero-img-wrap img:hover{transform:scale(1.02) translateY(-4px)}
+.hero-glow{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:200px;height:40px;background:radial-gradient(ellipse,rgba(78,203,113,.35),transparent 70%);filter:blur(8px)}
+.hero-thumb-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;max-width:440px;margin:0 auto 36px;animation:fadeUp .6s .4s ease both}
+.hero-thumb-row img{width:100%;height:110px;object-fit:cover;border-radius:10px;box-shadow:var(--shadow2);cursor:pointer;transition:all .25s}.hero-thumb-row img:hover{transform:scale(1.03);box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.hero-tags{position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;animation:fadeUp .6s .45s ease both}
+.hero-tag{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:6px 16px;border-radius:100px;font-size:13px;font-weight:500}
+/* ─── STATS BAR ─── */
+.stats-bar{background:var(--blue);display:flex;justify-content:center;flex-wrap:wrap}
+.stat-item{flex:1;min-width:120px;max-width:220px;padding:18px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;color:#fff;line-height:1}
+.stat-num em{font-style:normal;color:var(--green);font-size:1.3rem}
+.stat-label{font-size:11px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.8px;margin-top:4px;font-weight:600}
+/* ─── SECTIONS ─── */
+.sec{padding:64px 20px}
+.sec-inner{max-width:900px;margin:0 auto}
+.sec-light{background:var(--white)}
+.sec-tint{background:linear-gradient(160deg,var(--off),var(--blue4))}
+.sec-dark{background:linear-gradient(160deg,var(--blue-bg),var(--blue-bg2))}
+.sec-tag{display:inline-flex;align-items:center;gap:6px;background:var(--blue4);color:var(--blue);padding:5px 14px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px}
+.sec-tag.green{background:rgba(78,203,113,.12);color:var(--green3)}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--dark);line-height:1.1;margin-bottom:8px}
+.sec-title.white{color:#fff}
+.sec-desc{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:36px}
+.sec-desc.white{color:rgba(255,255,255,.6)}
+/* ─── SPEED DISPLAY ─── */
+.speed-display{display:flex;justify-content:center;align-items:center;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+.speed-box{background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);border-radius:16px;padding:22px 36px;text-align:center;min-width:130px}
+.speed-box.highlight{background:rgba(78,203,113,.15);border-color:var(--green);box-shadow:0 0 32px rgba(78,203,113,.25)}
+.speed-val{font-family:'Barlow Condensed',sans-serif;font-size:3.2rem;font-weight:900;color:#fff;line-height:1}
+.speed-box.highlight .speed-val{color:var(--green)}
+.speed-unit{font-size:1.1rem;color:rgba(255,255,255,.5);font-weight:600;margin-left:4px}
+.speed-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-top:6px;font-weight:600}
+.speed-arrow{font-size:2rem;color:var(--blue3);font-family:'Barlow Condensed',sans-serif;font-weight:900}
+/* ─── TWO-COL FEATURE ─── */
+.feat-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.feat-layout.rev{direction:rtl}.feat-layout.rev>*{direction:ltr}
+.feat-img{border-radius:16px;overflow:hidden;box-shadow:var(--shadow2);transition:transform .35s}.feat-img:hover{transform:translateY(-5px)}
+.feat-img img{width:100%;display:block;cursor:pointer}
+.feat-num{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:900;color:var(--blue4);line-height:1;margin-bottom:.5rem}
+.feat-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.4rem,2.5vw,2.1rem);font-weight:900;color:var(--dark);margin-bottom:.75rem;line-height:1.15}
+.feat-body{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem}
+.feat-body strong{color:var(--blue);font-weight:600}
+.feat-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+.feat-pill{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--blue);background:var(--blue4);border:1px solid rgba(26,159,212,.25);padding:4px 12px;border-radius:4px;letter-spacing:.5px}
+/* ─── CHIP GRID ─── */
+.chip-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px}
+.chip-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:22px;position:relative;overflow:hidden;transition:all .25s}.chip-card:hover{border-color:var(--blue);box-shadow:var(--shadow)}
+.chip-year{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:var(--blue);background:var(--blue4);padding:3px 10px;border-radius:4px;display:inline-block;font-weight:700;letter-spacing:.8px;margin-bottom:10px}
+.chip-name{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:900;color:var(--dark);line-height:1;margin-bottom:6px}
+.chip-desc{font-size:13px;color:var(--muted);line-height:1.5}
+/* ─── BRAND IMAGE ─── */
+.brand-img-wrap{border-radius:14px;overflow:hidden;box-shadow:var(--shadow2);margin-top:1.5rem;cursor:pointer;transition:transform .3s}.brand-img-wrap:hover{transform:translateY(-4px)}
+.brand-img-wrap img{width:100%;display:block}
+/* ─── COVERAGE BOX ─── */
+.coverage-box{background:linear-gradient(135deg,var(--blue-bg),var(--blue-bg2));border-radius:12px;padding:2rem;text-align:center;border:1px solid rgba(26,159,212,.2);margin-top:1.5rem}
+.coverage-num{font-family:'Barlow Condensed',sans-serif;font-size:5.5rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-2px}
+.coverage-num em{font-style:normal;color:var(--blue3)}
+.coverage-label{font-size:13px;color:rgba(255,255,255,.55);margin-top:.5rem;font-weight:300}
+/* ─── COMPAT LAYOUT ─── */
+.compat-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
+.proto-section{margin-top:.75rem}
+.proto-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:.6rem;font-weight:700}
+.proto-pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem}
+.proto-pill{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;padding:5px 14px;border-radius:4px;border:1px solid rgba(26,159,212,.35);background:var(--blue4);color:var(--blue);letter-spacing:.5px}
+/* ─── SPECS ─── */
+.specs-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+.spec-table{border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+.spec-row{display:grid;grid-template-columns:1fr 1.5fr;border-bottom:1px solid var(--border)}.spec-row:last-child{border-bottom:none}
+.spec-k{padding:.85rem 1.25rem;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--muted);background:var(--off);border-right:1px solid var(--border);letter-spacing:.6px;text-transform:uppercase;display:flex;align-items:center}
+.spec-v{padding:.85rem 1.25rem;font-size:13px;color:var(--dark);font-weight:600}
+.spec-v.hl{color:var(--blue);font-weight:700}
+.box-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:var(--dark);margin-bottom:.25rem}
+.box-sub{font-size:13px;color:var(--muted);margin-bottom:1.25rem}
+.box-items{display:flex;flex-direction:column;gap:.5rem}
+.box-item{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);border-radius:6px;padding:.85rem 1rem;font-size:13px;color:var(--muted);transition:all .2s}.box-item:hover{border-color:var(--blue);background:var(--blue4)}
+/* ─── COMPARE ─── */
+.compare-wrap{overflow-x:auto;margin-top:2.5rem}
+.ct{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+.ct th{padding:1rem 1.5rem;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:900;text-align:center;background:var(--blue-bg)}
+.ct th.fc{background:var(--blue-bg2);text-align:left;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.8px;text-transform:uppercase}
+.ct th.u15{color:rgba(255,255,255,.4)}
+.ct th.u70{color:var(--green);font-size:18px}
+.ct td{padding:.9rem 1.5rem;font-size:14px;text-align:center;border-bottom:1px solid var(--border);background:#fff}
+.ct td.fn{text-align:left;font-weight:600;color:var(--muted);background:var(--off);font-size:13px}
+.ct tr:last-child td{border-bottom:none}
+.ct tr:hover td{background:var(--blue4)}.ct tr:hover td.fn{background:var(--blue4)}
+.cy{color:var(--green);font-size:18px;font-weight:900}
+.cn{color:#e05555;font-size:18px}
+.trade-box{margin-top:1.5rem;background:linear-gradient(135deg,var(--blue-bg),var(--blue-bg2));border-radius:12px;padding:1.75rem;color:rgba(255,255,255,.65);font-size:14px;font-weight:400;line-height:1.8;border:1px solid rgba(26,159,212,.2)}
+.trade-box strong{color:var(--blue3)}
+/* ─── APP SECTION ─── */
+.app-img-wrap{border-radius:16px;overflow:hidden;box-shadow:var(--shadow2);margin-top:2.5rem;cursor:pointer;transition:transform .3s}.app-img-wrap:hover{transform:translateY(-5px)}
+.app-img-wrap img{width:100%;display:block}
+/* ─── REVIEWS ─── */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.tc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.75rem;transition:border-color .2s}.tc:hover{border-color:rgba(26,159,212,.4)}
+.stars{color:#f0c040;font-size:14px;letter-spacing:3px;margin-bottom:1rem}
+.tb{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:#fff;line-height:1.5;margin-bottom:.5rem}
+.tn{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:1.25rem}
+.tm{display:flex;align-items:center;gap:8px}
+.td2{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
+.tcy{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:rgba(255,255,255,.3);letter-spacing:1px;font-weight:700;text-transform:uppercase}
+.tvb{margin-left:auto;background:rgba(78,203,113,.12);color:var(--green);font-family:'Barlow Condensed',sans-serif;font-size:9px;padding:2px 8px;border-radius:2px;letter-spacing:.6px;font-weight:700;text-transform:uppercase}
+.trust-bar-dark{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden;margin-top:2.5rem}
+.ts{background:rgba(255,255,255,.03);padding:1.5rem;text-align:center}
+.tn2{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:900;color:#fff;line-height:1;margin-bottom:4px}
+.tl{font-size:11px;color:rgba(255,255,255,.35);font-weight:400;text-transform:uppercase;letter-spacing:.5px}
+/* ─── STEPS ─── */
+.steps{display:flex;flex-direction:column;gap:16px;margin-top:2rem}
+.step{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 20px;transition:all .25s}.step:hover{border-color:var(--blue);box-shadow:var(--shadow)}
+.step-num{width:36px;height:36px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:900}
+.step-title{font-weight:700;color:var(--dark);margin-bottom:3px;font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:.3px}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.5}
+/* ─── SHARE ─── */
+.share-wrap{padding:48px 20px;max-width:900px;margin:0 auto}
+.sh-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem}
+.sh-btns{display:flex;flex-wrap:wrap;gap:.6rem}
+.sb{display:inline-flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;padding:8px 18px;border-radius:6px;text-decoration:none;border:1px solid var(--border);color:var(--muted);background:#fff;cursor:pointer;outline:none;transition:all .2s;text-transform:uppercase}.sb:hover{transform:translateY(-1px)}
+.sb.fb{color:#1877f2;border-color:rgba(24,119,242,.3)}.sb.fb:hover{background:rgba(24,119,242,.06)}
+.sb.tw{color:#1da1f2;border-color:rgba(29,161,242,.3)}.sb.tw:hover{background:rgba(29,161,242,.06)}
+.sb.li{color:#0a66c2;border-color:rgba(10,102,194,.3)}.sb.li:hover{background:rgba(10,102,194,.06)}
+.sb.wa{color:#25d366;border-color:rgba(37,211,102,.3)}.sb.wa:hover{background:rgba(37,211,102,.06)}
+.sb.wx{color:#07c160;border-color:rgba(7,193,96,.3)}.sb.wx:hover{background:rgba(7,193,96,.06)}
+/* ─── CTA ─── */
+.cta-sec{background:linear-gradient(135deg,var(--blue-bg),var(--blue-bg2));padding:72px 20px;text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 100%,rgba(78,203,113,.15),transparent 60%);pointer-events:none}
+.cta-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;line-height:1.05;margin-bottom:1rem;position:relative}
+.cta-title em{font-style:normal;color:var(--green)}
+.cta-sub{font-size:15px;color:rgba(255,255,255,.55);margin-bottom:2.5rem;position:relative}
+.cta-note{margin-top:1rem;font-family:'Barlow Condensed',sans-serif;font-size:12px;color:rgba(255,255,255,.2);letter-spacing:.5px;position:relative;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:10px;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:900;letter-spacing:.5px;cursor:pointer;border:none;text-decoration:none;transition:all .25s;text-transform:uppercase}
+.btn-primary{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;box-shadow:0 4px 20px rgba(78,203,113,.35)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(78,203,113,.45)}
+.btn-outline{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.25)}.btn-outline:hover{background:rgba(255,255,255,.18)}
+.btn-group{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
+/* ─── DIVIDER ─── */
+.divider{height:3px;background:linear-gradient(90deg,var(--blue4),var(--green),var(--blue4))}
+/* ─── FOOTER ─── */
+footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;padding:2.5rem 20px;font-size:12px}
+footer strong{color:var(--blue3)}
+/* ─── LIGHTBOX ─── */
+.lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,42,74,.96);align-items:center;justify-content:center;padding:2rem}.lb.open{display:flex}
+.lb img{max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.6)}
+.lb-x{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:background .2s}.lb-x:hover{background:rgba(255,255,255,.2)}
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .feat-layout,.compat-layout,.specs-layout{grid-template-columns:1fr}
+  .feat-layout.rev{direction:ltr}
+  .tg{grid-template-columns:1fr}
+  .trust-bar-dark{grid-template-columns:1fr 1fr}
+  .chip-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media(max-width:540px){
+  .sec{padding:52px 1.25rem}
+  .stats-bar{flex-direction:column}.stat-item{max-width:100%;border-right:none;border-bottom:1px solid rgba(255,255,255,.12)}
+}
+</style>
+</head>
+<body>
+
+<div class="lb" id="lb" onclick="closeLb()">
+  <button class="lb-x" onclick="closeLb()">✕</button>
+  <img id="lb-img" src="" alt=""/>
+</div>
+
+<nav>
+  <div class="nav-brand">
+    <span class="nav-logo">JCID<span>精诚创新</span></span>
+    <span class="nav-chip">U70 Gen2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#feat">Features</a></li>
+    <li><a href="#compat">Compat</a></li>
+    <li><a href="#specs">Specs</a></li>
+    <li><a href="#vs">vs U15</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="https://www.jcprogrammer.com/product/u70-gen2-ufs-programmer-for-android-ufsemmcisp-nand-repair-/" target="_blank" class="nav-cta">Inquire Now →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div style="position:relative;z-index:1;width:100%">
+    <div class="hero-badge">JCID Official · U70 Gen2 · 2026 Launch</div>
+    <h1 class="hero-title">Android NAND<br><span>Programmer U70</span></h1>
+    <p class="hero-sub">The fastest UFS/eMMC/ISP NAND programmer on the market</p>
+    <div class="hero-chip">UFS / eMMC / ISP · Gen2 · Single USB 3.0 Cable</div>
+    <div class="hero-img-wrap">
+      <img src="images/img_02.jpg" alt="JCID U70 Gen2 Android NAND Programmer" onclick="openLb(this.src)"/>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="hero-thumb-row">
+      <img src="images/img_01.jpg" alt="U70 front view" onclick="openLb(this.src)"/>
+      <img src="images/img_11.jpg" alt="U70 full kit" onclick="openLb(this.src)"/>
+    </div>
+    <div class="hero-tags">
+      <span class="hero-tag">UFS 4.1</span>
+      <span class="hero-tag">eMMC 5.1</span>
+      <span class="hero-tag">ISP Mode</span>
+      <span class="hero-tag">USB 3.0</span>
+      <span class="hero-tag">134g</span>
+      <span class="hero-tag">Free Lifetime Upgrades</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">99<em>%</em></div><div class="stat-label">NAND Coverage</div></div>
+  <div class="stat-item"><div class="stat-num">250<em>MB/s</em></div><div class="stat-label">Read Speed</div></div>
+  <div class="stat-item"><div class="stat-num">350<em>MB/s</em></div><div class="stat-label">Write Speed</div></div>
+  <div class="stat-item"><div class="stat-num">13<em>yr</em></div><div class="stat-label">JCID Expertise</div></div>
+  <div class="stat-item"><div class="stat-num">1<em>Cable</em></div><div class="stat-label">USB 3.0 Only</div></div>
+</div>
+
+<!-- FEATURE 1: FULL PROTOCOLS -->
+<section id="feat" class="sec sec-light">
+  <div class="sec-inner">
+    <div class="feat-layout">
+      <div>
+        <div class="sec-tag">Feature 01</div>
+        <div class="feat-num">01</div>
+        <div class="feat-title">Full Protocols Coverage.</div>
+        <p class="feat-body">Perfect support for <strong>UFS, eMMC, and ISP</strong> read and write — meeting the NAND repair needs of virtually all smart devices including mobile phones, drones, and automotive systems.</p>
+        <div class="feat-pills">
+          <span class="feat-pill">UFS 4.1</span>
+          <span class="feat-pill">UFS 4.0</span>
+          <span class="feat-pill">UFS 3.1</span>
+          <span class="feat-pill">eMMC 5.1</span>
+          <span class="feat-pill">eMMC 5.0</span>
+          <span class="feat-pill">ISP Mode</span>
+        </div>
+      </div>
+      <div class="feat-img" onclick="openLb('images/img_04.jpg')" style="cursor:pointer">
+        <img src="images/img_04.jpg" alt="Full protocols coverage — connected to PC"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 2: SPEED + CABLE -->
+<section class="sec sec-dark">
+  <div class="sec-inner" style="text-align:center">
+    <div class="sec-tag green" style="margin:0 auto 12px">Feature 02</div>
+    <h2 class="sec-title white">Blazing Speed.<br>Ultra-Simple Operation.</h2>
+    <p class="sec-desc white" style="max-width:500px;margin:0 auto 36px">With sufficient USB 3.0 power, a single data cable is all you need — no external power supply required.</p>
+    <div class="speed-display">
+      <div class="speed-box">
+        <div class="speed-val">250<span class="speed-unit">MB/s</span></div>
+        <div class="speed-label">Read Speed</div>
+      </div>
+      <div class="speed-arrow">→</div>
+      <div class="speed-box highlight">
+        <div class="speed-val">350<span class="speed-unit">MB/s</span></div>
+        <div class="speed-label">Write Speed</div>
+      </div>
+    </div>
+    <div style="max-width:500px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);cursor:pointer" onclick="openLb('images/img_07.jpg')">
+      <img src="images/img_07.jpg" alt="Single cable USB 3.0 operation" style="width:100%;display:block"/>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND COMPATIBILITY -->
+<section id="compat" class="sec sec-light">
+  <div class="sec-inner">
+    <div class="compat-layout">
+      <div>
+        <div class="sec-tag">Brand-Friendly</div>
+        <h2 class="sec-title">Every brand your<br>customers bring in.</h2>
+        <p class="sec-desc">Fully compatible with mainstream storage chip brands — SanDisk, Toshiba, Samsung, YMTC, Micron, HiSilicon, SK Hynix, and more.</p>
+        <div class="brand-img-wrap" onclick="openLb('images/img_10.jpg')">
+          <img src="images/img_10.jpg" alt="Brand compatibility: SanDisk, Toshiba, Samsung, YMTC, Micron, HiSilicon, SK Hynix"/>
+        </div>
+      </div>
+      <div>
+        <div class="sec-tag">Protocols & Sockets</div>
+        <div class="proto-section">
+          <div class="proto-title">Supported Protocols</div>
+          <div class="proto-pills">
+            <span class="proto-pill">UFS 4.1</span><span class="proto-pill">UFS 4.0</span>
+            <span class="proto-pill">UFS 3.1</span><span class="proto-pill">UFS 2.x</span>
+            <span class="proto-pill">eMMC 5.1</span><span class="proto-pill">eMMC 5.0</span>
+            <span class="proto-pill">ISP</span>
+          </div>
+          <div class="proto-title">Socket Support</div>
+          <div class="proto-pills">
+            <span class="proto-pill">UFS 153</span><span class="proto-pill">UFS 254</span>
+            <span class="proto-pill">UFS 297</span><span class="proto-pill">eMMC 153</span>
+            <span class="proto-pill">eMMC 169</span><span class="proto-pill">eMMC 221</span>
+            <span class="proto-pill">eMMC 254</span>
+          </div>
+        </div>
+        <div class="coverage-box">
+          <div class="coverage-num">99<em>%</em></div>
+          <p class="coverage-label">of UFS/eMMC chips covered · March 2026<br/>expandable via free online updates</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WIDE APPLICATION -->
+<section class="sec sec-tint">
+  <div class="sec-inner">
+    <div class="sec-tag green">Wide-Range Application</div>
+    <h2 class="sec-title">One programmer.<br>Endless possibilities.</h2>
+    <p class="sec-desc" style="max-width:600px">From phones to drones to vehicles — U70 Gen2 expands your service capabilities far beyond traditional phone repair.</p>
+    <div class="app-img-wrap" onclick="openLb('images/img_09.jpg')">
+      <img src="images/img_09.jpg" alt="Wide applications: Android phones, drones, vehicles, set-top boxes"/>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section id="specs" class="sec sec-light">
+  <div class="sec-inner">
+    <div class="sec-tag">Technical Specifications</div>
+    <h2 class="sec-title">Built to professional standards.</h2>
+    <div class="specs-layout" style="margin-top:2.5rem">
+      <div class="spec-table">
+        <div class="spec-row"><div class="spec-k">Model</div><div class="spec-v">JCID U70 (Gen 2)</div></div>
+        <div class="spec-row"><div class="spec-k">Brand</div><div class="spec-v">JCID · 精诚创新</div></div>
+        <div class="spec-row"><div class="spec-k">Material</div><div class="spec-v">Aluminum Alloy + Baking Paint</div></div>
+        <div class="spec-row"><div class="spec-k">Weight</div><div class="spec-v">134 g</div></div>
+        <div class="spec-row"><div class="spec-k">Dimensions</div><div class="spec-v">116.5 × 66 × 13.7 mm</div></div>
+        <div class="spec-row"><div class="spec-k">Connection</div><div class="spec-v">USB 3.0 Single Cable</div></div>
+        <div class="spec-row"><div class="spec-k">Read Speed</div><div class="spec-v hl">~250 MB/s</div></div>
+        <div class="spec-row"><div class="spec-k">Write Speed</div><div class="spec-v hl">~350 MB/s</div></div>
+        <div class="spec-row"><div class="spec-k">Upgrades</div><div class="spec-v">Online · Free · Lifetime</div></div>
+        <div class="spec-row"><div class="spec-k">Application</div><div class="spec-v">Phone, Drone, Auto, Smart TV, IoT</div></div>
+      </div>
+      <div>
+        <div class="box-title">What's in the Box</div>
+        <div class="box-sub">Complete professional kit — ready out of the box.</div>
+        <div class="box-items">
+          <div class="box-item">🖥️&nbsp; U70 Gen2 Programmer Host × 1</div>
+          <div class="box-item">🔌&nbsp; UFS 153/254/297 3-in-1 R&amp;W Socket × 1</div>
+          <div class="box-item">🔌&nbsp; eMMC 153/169/221/254 4-in-1 R&amp;W Socket × 1</div>
+          <div class="box-item">📡&nbsp; UFS/eMMC ISP Read &amp; Write Module × 1</div>
+          <div class="box-item">🔗&nbsp; USB 3.0 Data Cable × 1</div>
+        </div>
+        <div style="margin-top:1.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:pointer" onclick="openLb('images/img_11.jpg')">
+          <img src="images/img_11.jpg" alt="U70 complete kit contents" style="width:100%;display:block"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VS U15 -->
+<section id="vs" class="sec sec-tint">
+  <div class="sec-inner">
+    <div class="sec-tag green">U70 Gen2 vs U15</div>
+    <h2 class="sec-title">Why upgrade from U15?</h2>
+    <p class="sec-desc" style="max-width:560px">U70 adds full eMMC and ISP support plus several exclusive chip protocols that U15 simply cannot handle.</p>
+    <div class="compare-wrap">
+      <table class="ct">
+        <thead><tr>
+          <th class="fc">Feature</th>
+          <th class="u15">U15 <span style="font-size:11px;opacity:.4">Gen1</span></th>
+          <th class="u70">U70 Gen2</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="fn">UFS Protocol</td><td><span class="cy">✓</span></td><td><span class="cy">✓</span></td></tr>
+          <tr><td class="fn">eMMC Protocol</td><td><span class="cn">✗</span></td><td><span class="cy">✓</span></td></tr>
+          <tr><td class="fn">ISP Mode</td><td><span class="cn">✗</span></td><td><span class="cy">✓</span></td></tr>
+          <tr><td class="fn">HiSilicon 925 / JZ161 High-Speed</td><td><span class="cn">✗</span></td><td><span class="cy">✓</span></td></tr>
+          <tr><td class="fn">HiSilicon 935 Low Speed</td><td><span class="cn">✗</span></td><td><span class="cy">✓</span></td></tr>
+          <tr><td class="fn">YMTC Chip Recognition</td><td><span class="cn">✗</span></td><td><span class="cy">✓</span></td></tr>
+          <tr><td class="fn">Online Upgrade</td><td><span class="cy">✓</span></td><td><span class="cy">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trade-box">
+      <strong>Support Trade-In:</strong> U15 is the first generation Android NAND programmer from JCID; U70 is the second. We provide trade-in service from U15 host to U70 host — the socket does not need to be replaced, and first and second generation sockets are universal.
+      <p style="margin-top:.5rem;font-size:11px;opacity:.4">* Above data proved by JCID lab</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="sec sec-light">
+  <div class="sec-inner">
+    <div class="sec-tag">How to Use</div>
+    <h2 class="sec-title">Up and running in minutes.</h2>
+    <p class="sec-desc">No complex setup. Plug in, connect, repair.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div><div class="step-title">Connect via USB 3.0</div><div class="step-desc">Plug the USB 3.0 cable from U70 to your PC. No external power adapter needed — USB supplies sufficient power.</div></div></div>
+      <div class="step"><div class="step-num">02</div><div><div class="step-title">Install the target socket or ISP module</div><div class="step-desc">Choose the correct UFS 3-in-1, eMMC 4-in-1, or ISP module for the chip you're working on.</div></div></div>
+      <div class="step"><div class="step-num">03</div><div><div class="step-title">Launch the JCID software</div><div class="step-desc">Open the JCID platform software on your PC. Device auto-detects. Select read, write, or repair operation.</div></div></div>
+      <div class="step"><div class="step-num">04</div><div><div class="step-title">Execute — done in seconds</div><div class="step-desc">250 MB/s read · 350 MB/s write. Industry-leading speed means most jobs complete in under a minute.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="sec sec-dark">
+  <div class="sec-inner">
+    <div class="sec-tag green">Verified Buyer Reviews</div>
+    <h2 class="sec-title white">Trusted by technicians<br>across China and beyond.</h2>
+    <div class="tg">
+      <div class="tc"><div class="stars">★★★★★</div><p class="tb">"Speed is insane. Every weird drive I throw at it — handled."</p><p class="tn">Used it on 40+ phones in the first week. The speeds alone pay for this tool in days.</p><div class="tm"><span class="td2"></span><span class="tcy">Shenzhen, CN</span><span class="tvb">✓ Verified</span></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p class="tb">"Fixed what every other programmer failed on."</p><p class="tn">Had a batch of Samsung drives my old programmer couldn't read. U70 handled all of them.</p><div class="tm"><span class="td2"></span><span class="tcy">Guangzhou, CN</span><span class="tvb">✓ Verified</span></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p class="tb">"Rock-solid stability. Now the only programmer in my shop."</p><p class="tn">Replaced two older devices. Faster, more compatible, excellent aluminum build. Worth every cent.</p><div class="tm"><span class="td2"></span><span class="tcy">Beijing, CN</span><span class="tvb">✓ Verified</span></div></div>
+    </div>
+    <div class="trust-bar-dark">
+      <div class="ts"><div class="tn2">99%</div><div class="tl">NAND coverage</div></div>
+      <div class="ts"><div class="tn2">13yr</div><div class="tl">JCID expertise</div></div>
+      <div class="ts"><div class="tn2">1yr</div><div class="tl">field testing</div></div>
+      <div class="ts"><div class="tn2">350</div><div class="tl">MB/s write</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARE -->
+<div class="share-wrap">
+  <div class="sh-title">Share · 分享</div>
+  <div class="sh-btns">
+    <a class="sb fb" id="sfb" href="#" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+    <a class="sb tw" id="stw" href="#" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>Twitter</a>
+    <a class="sb li" id="sli" href="#" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+    <a class="sb wa" id="swa" href="#" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>WhatsApp</a>
+    <button class="sb wx" onclick="cpWx()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 13.5l1.5-2 1.5 2 2.5-3.5L17 14H7l1.5-2.5zM21 12.79A9 9 0 1 1 12.79 3H13a9 9 0 0 1 8 8.79V12.79z"/></svg>微信</button>
+    <button class="sb" id="scb" onclick="cpLk()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2 class="cta-title">Ready to repair faster,<br>earn more, and turn <em>no jobs away</em>?</h2>
+  <p class="cta-sub">Join thousands of technicians who trust JCID. The U70 Gen2 is the last NAND programmer you'll ever need.</p>
+  <div class="btn-group">
+    <a href="https://www.jcprogrammer.com/product/u70-gen2-ufs-programmer-for-android-ufsemmcisp-nand-repair-/" target="_blank" class="btn btn-primary">Inquire Now →</a>
+    <a href="#feat" class="btn btn-outline">See All Features</a>
+  </div>
+  <p class="cta-note">Free Shipping · Official JCID Authorized · info@jcprogrammer.com</p>
+</section>
+
+<footer>
+  <p><strong>JCID · 精诚创新</strong> &nbsp;·&nbsp; Shenzhen JC Innovation Device Co., Ltd.</p>
+  <p style="margin-top:.5rem">Room 403, Building 2, IOT Industrial Park, Longgang District, Shenzhen &nbsp;·&nbsp; <a href="https://www.jcprogrammer.com" style="color:var(--blue3);text-decoration:none">jcprogrammer.com</a></p>
+  <p style="margin-top:.75rem;opacity:.4">© 2026 All Rights Reserved · More stable and intelligent, choose JCID</p>
+</footer>
+
+<script>
+const PU='https://itslh1024.github.io/jcid-u70/',PT='JCID U70 Gen2 — The Fastest Android NAND Programmer',PD='250MB/s read · 350MB/s write · 99% UFS/eMMC coverage · UFS 4.1 ready.';
+document.getElementById('sfb').href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(PU);
+document.getElementById('stw').href='https://twitter.com/intent/tweet?url='+encodeURIComponent(PU)+'&text='+encodeURIComponent(PT+' — '+PD);
+document.getElementById('sli').href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(PU);
+document.getElementById('swa').href='https://wa.me/?text='+encodeURIComponent(PT+'\n'+PD+'\n'+PU);
+function openLb(s){document.getElementById('lb-img').src=s;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+function cpWx(){navigator.clipboard.writeText(PU).then(()=>alert('链接已复制！打开微信粘贴即可分享。\nLink copied — paste into WeChat.')).catch(()=>prompt('Copy:',PU))}
+function cpLk(){navigator.clipboard.writeText(PU).then(()=>{const b=document.getElementById('scb');b.textContent='✓ Copied!';setTimeout(()=>{b.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link'},2000)})}
+// Reveal on scroll
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.tc,.step,.chip-card').forEach(el=>{el.classList.add('reveal');obs.observe(el)});
+</script>
+</body>
+</html>
